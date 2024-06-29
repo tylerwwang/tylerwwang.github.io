@@ -1,0 +1,21 @@
+.contact-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+
+	gap: 40px;
+
+	img {
+		max-height: 40px;
+		min-height: 20px;
+	}
+	img:hover {
+		transform: scale(1.1);
+	}
+
+	@include media-query($on-finger) {
+		gap: 15px;
+	}
+}

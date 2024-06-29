@@ -1,0 +1,147 @@
+.hero-text {
+	top: 0px;
+	left: 0px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: calc(100vh + $navbar-height);
+	margin-top: -$navbar-height;
+
+	position: relative;
+
+	h1 {
+		font-size: clamp(0vh,90px,12vh);
+		text-align: center;
+		margin-bottom: 1vh;
+	}
+	h2 {
+		font-size: clamp(0vh,35px,5vh);
+		text-align: center;
+
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	.site-title {
+		vertical-align: middle;
+	}
+
+	.hero-gradient {
+		position: absolute;
+
+		bottom: 0px;
+
+		height: $navbar-height;
+		width: 100%;
+
+		background-image: linear-gradient(rgb(from $background-color r g b/ 0), $background-color);
+		background-image: -moz-linear-gradient(rgb(from $background-color r g b/ 0), $background-color);
+		background-image: -webkit-linear-gradient(rgb(from $background-color r g b/ 0), $background-color);
+		background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, $background-color), color-stop(100%, $background-color));
+		background-image: -ms-gradient(rgb(from $background-color r g b/ 0), $background-color);
+		background-image: -o-gradient(rgb(from $background-color r g b/ 0), $background-color);
+		background-image: linear-gradient(rgb(from $background-color r g b/ 0), $background-color);
+	}
+}
+
+.hero-image {
+	position: sticky;
+
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+
+	img {
+		object-fit: cover;
+	}
+
+	margin-top: -100vh;
+
+	top: 0px;
+	left: 0px;
+
+	height: 100vh;
+	width: 100vw;
+
+	mix-blend-mode: multiply;
+
+	z-index: -2;
+}
+.hero-background {
+	position: sticky;
+
+	margin-top: -100vh;
+
+	top: 0px;
+	left: 0px;
+
+	height: 100vh;
+	width: 100vw;
+
+	background: rgba(0, 0, 0,0.3);
+
+	z-index: -2;
+}
+@include media-query($on-laptop) {
+	.hero-text {
+		h1 {
+			font-size: clamp(0vh,75px,12vh);
+		}
+		h2 {
+			font-size: clamp(0vh,30px,5vh);
+		}
+	}
+}
+
+@include media-query($on-palm) {
+	.hero-text {
+		h1 {
+			font-size: clamp(0vh,60px,10vh);
+		}
+		h2 {
+			font-size: clamp(0vh,25px,4vh);
+		}
+	}
+}
+
+@include media-orient($portrait) {
+	.hero-image {
+		object-fit: cover;
+		position: sticky;
+
+		margin-top: -90vh;
+
+		top: 0px;
+		left: 0px;
+
+		height: 90vh;
+		width: 100vw;
+
+		mix-blend-mode: multiply;
+
+		z-index: -2;
+	}
+	.hero-background {
+		position: sticky;
+
+		margin-top: -90vh;
+
+		top: 0px;
+		left: 0px;
+
+		height: 90vh;
+		width: 100vw;
+
+		background: rgba(0, 0, 0,0.3);
+		//background-blend-mode: multiply;
+
+		z-index: -2;
+	}
+
+	.hero-text {
+		height: 90vh;
+	}
+
+}

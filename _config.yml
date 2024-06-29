@@ -1,0 +1,48 @@
+title: Meta Title
+site-title: Your Site's Title
+subtitle: >- # this means to ignore newlines until "baseurl:"
+  Your Site's Subtitle
+description: >- # this means to ignore newlines until "baseurl:"
+  Your Site's Description
+baseurl: "" # add /blog
+url: "https://your.site" # the base hostname & protocol for your site, e.g. http://example.com
+
+email: your@email
+name: "Your Name"
+about: >-
+  Your Infomriation <br/>
+  Line 1 <br/>
+  Line 2 <br/>
+social:
+  instagram: your_insta
+  github: your_github
+  twitter: your_twitter
+  youtube: your-youtube
+  linkedin: https://your-linkdedin-link
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+timezone: America/Chicago
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
+
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+google_analytics: google_analytic-id
+
+menu-pages:
+  - "about"
+  - "blog"

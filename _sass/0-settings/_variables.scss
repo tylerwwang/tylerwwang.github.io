@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+// Define defaults for each variable.
+
+$base-font-family: "Source Sans 3", sans-serif !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+// Headings
+$heading-font-weight: 600 !default;
+
+$font-size-h1:  36px !default;
+$font-size-h2:  28px !default;
+$font-size-h3:  24px !default;
+$font-size-h4:  20px !default;
+$font-size-h5:  18px !default;
+$font-size-h6:  16px !default;
+
+$spacing-unit:     40px !default;
+
+$text-color:       #fefefe !default;
+$brand-color:      #2a7ae2 !default;
+
+$background-color: #1e1e1e !default;
+$code-background-color: #181818 !default;
+$blockquote-background-color: #181818 !default;
+$blockquote-foreground-color: #dddddd !default;
+
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+$dark-gray-color: #151515 !default;
+
+$hover-color: lighten($dark-gray-color, 10%) !default;
+$overline-color: #aaaaaa !default;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    1000px !default;
+
+$navbar-height:     6vh !default;
+$navbar-overline:    0px !default;
+
+$on-finger:        300px !default;
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+$landscape:    landscape !default;
+$portrait:      portrait !default;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin media-orient($orentation) {
+  @media screen and (orientation: $orentation) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
