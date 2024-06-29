@@ -4,7 +4,7 @@ subtitle: >- # this means to ignore newlines until "baseurl:"
   Your Site's Subtitle
 description: >- # this means to ignore newlines until "baseurl:"
   Your Site's Description
-baseurl: "SiteTemplate" # add /blog
+baseurl: "sitetemplate" # add /blog
 url: "https://your.site" # the base hostname & protocol for your site, e.g. http://example.com
 
 email: your@email
