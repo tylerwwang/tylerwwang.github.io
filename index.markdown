@@ -4,11 +4,9 @@ permalink: /
 image:
     scale:
         - source: "assets/images/hero/hero-1080.webp"
-          min: "1080px"
-          max: "1440px"
+          min: "900px"
         - source: "assets/images/hero/hero-720.webp"
-          min: "720px"
-          max: "1080px"
+          max: "899px"
     base: "assets/youtube-logo.webp"
 ---
 # Welcome 
