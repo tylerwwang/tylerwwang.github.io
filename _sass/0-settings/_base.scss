@@ -62,6 +62,7 @@ p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
   margin-bottom: calc($spacing-unit / 2);
+  margin-top: $spacing-unit;
 }
 
 
