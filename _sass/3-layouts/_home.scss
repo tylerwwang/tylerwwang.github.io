@@ -47,7 +47,7 @@
 }
 
 .hero-image {
-	position: sticky;
+	float: inline-start;
 
 	display: flex;
 	justify-content: center;
@@ -55,19 +55,19 @@
 
 	img {
 		object-fit: cover;
+		width: 100vw;
+		min-height: 100vh;
 	}
 
-	margin-top: -100vh;
-
-	top: 0px;
-	left: 0px;
-
-	height: 100vh;
 	width: 100vw;
+	min-height: 100vh;
 
 	mix-blend-mode: multiply;
 
 	z-index: -2;
+
+	position: absolute;
+	bottom: 0px;
 }
 .hero-background {
 	position: sticky;
@@ -83,6 +83,8 @@
 	background: rgba(0, 0, 0,0.3);
 
 	z-index: -2;
+
+	overflow: hidden;
 }
 @include media-query($on-laptop) {
 	.hero-text {
@@ -108,20 +110,8 @@
 
 @include media-orient($portrait) {
 	.hero-image {
-		object-fit: cover;
-		position: sticky;
-
-		margin-top: -90vh;
-
-		top: 0px;
-		left: 0px;
-
-		height: 90vh;
 		width: 100vw;
-
-		mix-blend-mode: multiply;
-
-		z-index: -2;
+		min-height: 90vh;
 	}
 	.hero-background {
 		position: sticky;
@@ -135,7 +125,6 @@
 		width: 100vw;
 
 		background: rgba(0, 0, 0,0.3);
-		//background-blend-mode: multiply;
 
 		z-index: -2;
 	}
