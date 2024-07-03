@@ -157,8 +157,9 @@ blockquote {
   letter-spacing: -1px;
   font-style: italic;
 
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding: 30px;
+
+  font-size: 22px;
 
   > :last-child {
     margin-bottom: 0;
