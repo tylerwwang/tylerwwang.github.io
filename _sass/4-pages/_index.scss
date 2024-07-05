@@ -3,6 +3,12 @@
 		text-align: justify;
 	}
 }
+.home-about-dis {
+	p {
+		text-align: justify;
+	}
+}
+
 .home-introduction {
 	display: flex;
 	flex-direction: row;
@@ -60,7 +66,7 @@
 			}
 		}
 
-		.resume-link {
+		#resume-link {
 			margin: 5px;
 		}
 	}

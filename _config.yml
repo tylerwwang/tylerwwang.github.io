@@ -3,7 +3,7 @@ site-title: Drawings in Sand
 subtitle: >- # this means to ignore newlines until "baseurl:"
   Story of Tyler Wang
 description: >- # this means to ignore newlines until "baseurl:"
-  Tyler Wang is a student at the University of Illinois Urbana-CHampaign studying Physics and Mathematics.
+  Tyler Wang is a student at the University of Illinois Urbana-Champaign studying Physics and Mathematics.
 baseurl: "" # add /blog
 url: "https://tylerwang.org" # the base hostname & protocol for your site, e.g. http://example.com
 
