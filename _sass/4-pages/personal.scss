@@ -1,0 +1,35 @@
+.photo-gallery {
+	padding-bottom: 40px;
+}
+
+.photo-gallery-album-inner {
+	columns: 2;
+	column-gap: 20px;
+	column-span: all;
+
+	a {
+		height: fit-content;
+		width: fit-content;
+
+		&:hover {
+			img {
+			  transform: scale(1.05);
+		  	}
+		}
+	}
+
+	img {
+		display: block;
+		padding: 10px 0px;
+	}
+}
+
+@include media-query($on-laptop) {
+	.photo-gallery-album-inner {
+		columns: 1;
+
+		img {
+			width: 100%;
+		}
+	}
+}
