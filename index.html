@@ -21,55 +21,45 @@ image:
 			<p> Contact me:</p>
 			{% include contact_links.html %}
 		</div>
-		<div id="resume-link">
-			<a href="{{site.baseurl}}/assets/Resume.pdf" target="_blank" rel="noopener noreferrer">
-				My resume
-			</a>
-		</div>
+		<a id="about-link" href="{{site.baseurl}}/about">Learn more</a>
 	</div>
+	{% include image.html src="/assets/images/album/2020-08-00-Yellowstone/teton.jpg" alt="stars" width=480 class="home-image"%}
+	<!--
 	<img src="{{site.baseurl}}/assets/images/home/teton@480p.jpg" alt="stars"/>
+	-->
 </div>
 
-<div class="home-about-me">
-	<h1>About me</h1>
-	<p>
-		I'm currently a student in Mathematics and Physics, with a passion for unraveling the mysteries of the universe through the tools of mathematics.
-		From a young age, I've been bewildered by the mysteries of space and captivated by its stories.
-		The idea that seemingly arbitrary equations have such powerful implications for the world we live in is baffling.
-	</p>
-	<p>
-		Right now, I'm participating in a research project that strives to uncover the theoretical capabilities of quantum computing.
-		Although currently, the idea of quantum computing is still quite far in the future, but just like all those years ago,
-		even before the first viable computer was built, mathematians were already uncovering the theotical capabilites of the turing machine.
-	</p>
-	<p>
-		Outside of academia, I also enjoy music, whether that be playing it or going to see others perform it.
-		Though very different, I feel these interests are inherently connected; somehow the rigor of mathematics is very much tied in with the "free-flowingness" of music and art.
-		On this site, I've posted some works that best tell my story.
-	</p>
+{% if site.posts.size > 0 %}
+	<div class="home-blog">
+		<h1 style="margin-bottom: 0px">Recent Posts</h1>
+ 	 	{% for post in site.posts  limit: 3%}
+ 	 		{% include blog_post_box.html post=post %}
+ 	 	{% endfor %}
+		<p style="padding-top: 1em;"><a style="cursor: pointer" href="{{site.baseurl}}/blog">See More</a></p>
+	</div>
+{% endif %}
+
+<div class="home-gallery">
+	<h1>Personal Items</h1>
+	<h2>Photos</h2>
+	<div class="home-photo-highlights">
+		{% for photo in site.data.photo_highlights %}
+			{% include image.html src=photo alt="photo highlights" width=500 class="home-image-highlights"%}
+		{% endfor %}
+	</div>
 </div>
 
-<div class="home-about-dis">
-	<h1>Drawings in the Sand</h1>
-	<p>
-		Our life stories through time are like drawings in sand, 
-		admired until we must go, where the tide, through the emptiness of the night,
-		removes everything once significant, ready for the tales of another ...
-	</p>
-	<p>
-		As in the poem "Ozymandias":
-	</p>
-	<blockquote cite="https://www.poetryfoundation.org/poems/46565/ozymandias">
-		[...] <br/>
-		My name is Ozymandias, King of Kings; <br/>
-		Look on my Works, ye Mighty, and despair! <br/>
-		Nothing beside remains. Round the decay <br/>
-		Of that colossal Wreck, boundless and bare <br/>
-		The lone and level sands stretch far away.<br/>
-	</blockquote>
-	<p>
-		&#8212 Percy Bysshe Shelley (1818)
-	</p>
+<!--
+<div class="home-links">
+	<h1>Miscellaneous Links</h1>
+	<ul>
+		<li><a href="https://class.tylerwang.org" target="_blank" rel="noopener noreferrer">
+			Link to all of my class notes
+		</a></li>
+	</ul>
+</div>
+-->
+
 </div>
 
 

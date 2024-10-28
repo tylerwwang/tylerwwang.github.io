@@ -1,0 +1,89 @@
+---
+layout: default
+permalink: /photo/
+---
+
+<div style="border-bottom: white solid 1px; padding-bottom: 20px">
+	<!-- Load Image -->
+	<a id="link" class="photo-viewer-link"><img width="100%" id="image" class="photo-viewer-image" alt="image from album"/></a>
+	<script type="text/javascript">
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const imageURL = `{{site.url}}${urlParams.get('photo').replace(/\/+$/, "")}`;
+
+
+		var image = document.getElementById("image");
+		var link = document.getElementById("link");
+
+		image.setAttribute('src', imageURL);
+		link.setAttribute('href', imageURL);
+	</script>
+
+	<!-- Load Information -->
+	<div class="photo-viewer-information">
+		<h2 class="photo-viewer-title">
+			<span id="image-title"></span>
+			<span id="image-album"></span>
+		</h2>
+		<p id="image-caption"></p>
+		<span class="photo-viewer-author">
+			<p id="image-datetime"></p>
+			<p>By Tyler Wang</p>
+		</span>
+	</div>
+
+</div>
+
+<script src="//code.jquery.com/jquery-2.1.0.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+<script type="text/javascript">
+	function getMetaData() {
+		let img = document.getElementById("image");
+
+		$.getJSON(`${imageURL.substring(0,imageURL.lastIndexOf("/"))}/album.json`, (data) => {
+			let filename = imageURL.substring(imageURL.lastIndexOf('/') + 1, imageURL.lastIndexOf('.'));
+
+			if (data.images[filename]?.title) {
+				$("#image-title").html(data.images[filename]?.title);
+				$("#image-album").html(`- (${data.album_title})`);
+			}
+			if (data.images[filename]?.caption)
+				$("#image-caption").html(data.images[filename]?.caption);
+		});
+
+		EXIF.getData(img, function () {
+			let date = Date.parse(EXIF.getTag(this, "DateTimeOriginal").split(' ')[0].replaceAll(":","-"));
+			let formatDate = new Date(date);
+
+			$("#image-datetime").html(`${formatDate.toLocaleDateString(
+				undefined, {
+  		 			year: 'numeric',
+  		 			month: 'long',
+  		 			day: 'numeric',
+					timeZone: 'UTC'
+				}
+			)}`);
+		});
+
+
+	}
+
+	window.onload=getMetaData;
+</script>
+
+<script src="https://giscus.app/client.js"
+        data-repo="tylerwwang/tylerwwang.github.io"
+        data-repo-id="R_kgDOMRHRNg"
+        data-category="Blog"
+        data-category-id="DIC_kwDOMRHRNs4Cjo5_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark_dimmed"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>

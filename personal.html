@@ -1,0 +1,34 @@
+---
+layout: default
+permalink: /personal/
+---
+
+<h1>Photo Gallery</h1>
+
+<script src="//code.jquery.com/jquery-2.1.0.js"></script>
+<script src="{{site.baseurl}}/js/gallery.js"></script>
+
+<div class="photo-gallery" id="photo-gallery">
+	{% assign albumId = 0 %}
+	{% for album in site.static_files reversed %}
+		{% if album.path contains "assets/images/album" %}
+			{% if album.extname == '.json' %}
+				{% capture albumId %}{{ albumId | plus:1}}{%endcapture%}
+				<div id="photo-gallery-album-{{albumId}}" class="photo-gallery-album">
+					<script type="text/javascript">
+						generateGallery(
+							"{{album.path}}",
+							{%- if jekyll.environment == 'production' -%}
+								true
+							{%- else -%}
+								false
+							{%- endif -%},
+							"photo-gallery-album-{{albumId}}",
+							"{{site.baseurl}}/photo", "{{site.url}}"
+						);
+					</script>
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</div>

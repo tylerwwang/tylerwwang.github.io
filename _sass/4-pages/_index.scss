@@ -1,14 +1,3 @@
-.home-about-me {
-	p {
-		text-align: justify;
-	}
-}
-.home-about-dis {
-	p {
-		text-align: justify;
-	}
-}
-
 .home-introduction {
 	display: flex;
 	flex-direction: row;
@@ -28,7 +17,17 @@
 
 	img {
 		object-fit: cover;
-		max-width: 50%;
+	}
+
+	.home-image {
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	.intro-text {
@@ -36,6 +35,7 @@
 		flex-direction: column;
 		justify-content: center;
 
+		width: 50%;
 	}
 
 	.home-contact {
@@ -66,24 +66,57 @@
 			}
 		}
 
-		#resume-link {
+		#about-link {
 			margin: 5px;
 		}
 	}
-
-	border-bottom: solid white 1px;
 }
 
-.home-section {
-	margin: 30px;
+.home-blog {
+    padding-bottom: 10px;
+}
+
+.home-photo-highlights {
+	columns: 2;
+	column-gap: 20px;
+	column-span: all;
+
+	a {
+		height: fit-content;
+		width: fit-content;
+
+		&:hover {
+			img {
+			  transform: scale(1.05);
+		  	}
+		}
+	}
+
+	img {
+		display: block;
+		padding: 10px 0px;
+	}
+}
+
+@include media-query($on-laptop) {
+	.home-photo-highlights {
+		columns: 1;
+
+		img {
+			width: 100%;
+		}
+	}
 }
 
 @include media-query($on-laptop) {
 	.home-introduction {
 		flex-direction: column;
-		img {
-			max-width: 90%;
+		.home-image {
+			width: 90%;
+		}
+
+		.intro-text {
+			width: 100%;
 		}
 	}
-
 }
