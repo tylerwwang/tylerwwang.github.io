@@ -24,8 +24,10 @@
 	{% seo %}
 
 	<!-- Lightbox -->
-	<script type="text/javascript" src="{{ site.baseurl }}/js/lightbox.js" defer></script>
-	<link rel="stylesheet" href="{{ site.baseurl }}/assets/lightbox.css">
+	{% if page.lightbox %}
+		<script type="text/javascript" src="{{ site.baseurl }}/js/lightbox.js" defer></script>
+		<link rel="stylesheet" href="{{ site.baseurl }}/assets/lightbox.css">
+	{% endif %}
 
 	<!-- MathJax -->
 	{% if page.tex %}
