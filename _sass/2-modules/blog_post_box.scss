@@ -1,0 +1,32 @@
+.post-box {
+	border-bottom: #999999 solid 1px;
+	padding: 0.7em 0.5em;
+
+	&:last-child {
+		border: 0px;
+	}
+
+	.post-info-box {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-content: flex-start;
+
+		font-size: 0.9em;
+		color: #dddddd;
+		text-align: right;
+
+		margin-top: 10px;
+
+		.post-data-box {
+			font-size: 0.9em;
+		}
+
+		.post-tag-wrapper {
+			font-size: 0.8em;
+			margin: 0px;
+			align-items: flex-start;
+		}
+	}
+}

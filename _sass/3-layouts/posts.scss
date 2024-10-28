@@ -1,0 +1,62 @@
+.post-details {
+	font-size: 0.8em;
+	color: #bbbbbb;
+
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.post-detail-info {
+		color: #eeeeee;
+		font-weight: 500;
+	}
+}
+
+.post-content {
+	border-bottom: 1px white solid;
+	padding-bottom: 10px;
+}
+
+.post-license-wrapper {
+	font-size: 0.8em;
+	color: #bbbbbb;
+
+	a {
+		color: white;
+		:hover {
+			color: white;
+		}
+		:visited {
+			color: white;
+		}
+	}
+}
+
+.post-tag-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 5px;
+
+	align-items: center;
+
+
+	margin-top: 1em;
+
+	.post-tag-box {
+		color: white;
+		font-size: 0.9em;
+		padding: 0.2em 0.4em;
+		border-radius: 0.8em;
+
+		cursor: pointer;
+
+		border: white solid 1px;
+	}
+}
+
+.giscus {
+	margin-bottom: 20px;
+	margin-top: 3rem;
+}

@@ -5,7 +5,9 @@ subtitle: >- # this means to ignore newlines until "baseurl:"
 description: >- # this means to ignore newlines until "baseurl:"
   Tyler Wang is a student at the University of Illinois Urbana-Champaign studying Physics and Mathematics.
 baseurl: "" # add /blog
-url: "https://tylerwang.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tylerwang.org/" # the base hostname & protocol for your site, e.g. http://example.com
+
+lang: en
 
 email: wangtyler123@gmail.com
 name: "Tyler Wang"
@@ -19,7 +21,6 @@ social:
 
 # Build settings
 markdown: kramdown
-permalink: pretty
 timezone: America/Chicago
 plugins:
   - jekyll-sitemap
@@ -27,12 +28,14 @@ plugins:
 
 defaults:
   - scope:
-      path: '_pages'
+      path: "_posts"
+      type: "posts"
     values:
-      permalink: /:basename:output_ext
-
-include:
-  - _pages
+      layout: "posts"
+      author: "Tyler Wang"
+      permalink: /posts/:year/:month/:day/:title/
+      comments: true
+      tex: true
 
 sass:
   sass_dir: _sass
@@ -41,5 +44,6 @@ sass:
 google_analytics: "G-MLGCGVFJLC"
 
 menu-pages:
-  - "gallery"
-  - "links"
+  - "about"
+  - "blog"
+  - "personal"

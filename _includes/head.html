@@ -22,4 +22,60 @@
 	{%- endif -%}
 
 	{% seo %}
+
+	<!-- Lightbox -->
+	<script type="text/javascript" src="{{ site.baseurl }}/js/lightbox.js" defer></script>
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/lightbox.css">
+
+	<!-- MathJax -->
+	{% if page.tex %}
+		<script type="text/javascript">
+			window.MathJax = {
+				tex: {
+					processEscapes: true,
+					processEnvironments: true,
+					packages: ['base','ams', 'configmacros'],
+					inlineMath: [['$', '$']],
+					displayMath: [['$$', '$$'],['\\(','\\)'],['\\[','\\]']],
+					tags: 'ams',
+					macros: {
+						real: "{\\mathbb{R}}",
+						integ: "{\\mathbb{Z}}",
+						mod: ["{\\mathbb{Z}_{#1}",1],
+						complex: "{\\mathbb{C}}",
+						rat: "{\\mathbb{Q}}",
+						irat: "{\\mathbb{R} \\setminus \\mathbb{Q}",
+						real: "{\\mathbb{R}}",
+						real: "{\\mathbb{R}}",
+
+						paren: ["{\\left(#1\\right)}", 1],
+						sbrak: ["{\\left[#1\\right]}", 1],
+						cbrak: ["{\\left\\{#1\\right\\}}", 1],
+
+						ceil: ["{\\left\\lceil #1 \\right\\rceil}", 1],
+						floor: ["{\\left\\lfloor #1 \\right\\rfloor}", 1],
+						abs: ["{\\left\\lvert #1 \\right\\rvert}", 1],
+						abrak: ["{\\left\\langle #1 \\right\\rangle}", 1],
+						bra: ["{\\left\\langle #1 \\right\\rvert}"],
+						ket: ["{\\left\\lvert #1 \\right\\rangle}"],
+						braket: ["{\\left\\langle #1 \\left.\\right\\lvert #2 \\right\\rangle}" , 2],
+
+						jand: ["{\\quad\\text{and}\\quad}"],
+						jor: ["{\\quad\\text{or}\\quad}"],
+						"for" : ["{\\quad\\text{for }\\,}"],
+
+						ieval: ["{\\Bigg|^{#2}_{#1}}", 2],
+						deval: ["{\\bigg|_{#1}}" ,1],
+
+						diff: ["{\\frac{d#1}{d#2}}", 2],
+						pdiff: ["{\\frac{\\partial#1}{\\partial#2}}", 2]
+					}
+				},
+				loader: {load: ['ui/menu', '[tex]/ams','[tex]/configmacros']},
+			};
+		</script>
+		<script type="text/javascript" id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+		</script>
+	{% endif %}
 </head>

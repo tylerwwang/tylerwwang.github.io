@@ -1,0 +1,55 @@
+<style>
+	.image-gallery {
+		overflow: auto;
+		margin-left: -1% !important;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+
+		columns: 2;
+
+		gap: 0px;
+	}
+	.image-gallery a {
+		float: left;
+		display: block;
+		margin: 0 0 1% 1%;
+		text-align: center;
+		text-decoration: none!important;
+		height: fit-content;
+		width: 100%;
+
+		&:hover {
+			img {
+			  filter: brightness(90%);}
+			  -webkit-filter: brightness(90%);}
+		}
+:
+	}
+	.image-gallery a img {
+		display: block;
+	}
+</style>
+
+<div class="image-gallery">
+{% for file in site.static_files %}
+
+  {% if file.path contains include.folder %}
+    {% if file.extname == '.jpg' or
+      file.extname == '.jpeg' or
+      file.extname == '.JPG' or
+      file.extname == '.JPEG' %}
+
+      {% assign filename = filenameparts | last | replace: file.extname,"" %}
+
+	  <a href="{{site.baseurl}}/photo?photo={{ file.path }}" class="no-lightbox">
+		{%- if jekyll.environment == 'production' -%}
+ 	   		<img src="//images.weserv.nl/?url=jekyllcodex.org/{{ file.path }}&w=500&output=jpg&q=50" alt="{{ filename }}" />
+		{%- else -%}
+ 	   		<img src="{{ file.path }}" width="500"/>
+		{%- endif -%}
+      </a>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</div>

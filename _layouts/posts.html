@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+<h1 style="margin-bottom: 15px">{{ page.title }}</h1>
+
+<div class="post-details">
+	<div>
+		<div>
+			<!-- Posted -->
+			{{- site.data.locales[lang].post.posted -}} {{' '}} <span class="post-detail-info"> {{' '}} {{page.date | date: "%B %d, %Y" }} </span>
+
+
+		  {% if post.revised %}
+				<span style="color:white; padding: 2px;">&#x2022</span>
+				<!-- Modified -->
+				{{- site.data.locales[lang].post.updated -}} <span class="post-detail-info"> {{' '}} {{page.revised | date: "%B %d, %Y" }} </span>
+		  {% endif %}
+		</div>
+		<div>
+			<!-- Author -->
+			{{- site.data.locales[lang].post.written_by -}} <span class="post-detail-info">{{' '}}{{page.author}} </span>
+
+		<span class="post-tag-wrapper">
+			{{- site.data.locales[lang].tabs.tags -}}{{ ': ' }}
+			{% for tag in page.tags %}
+			<span class="post-tag-box"> {{tag}} </span>
+			{% endfor %}
+		</span>
+
+		</div>
+	</div>
+
+	<div>
+		{% include read-time.html content=content prompt=true lang=lang %}
+	</div>
+</div>
+
+<div class="post-content">
+	{{ content }}
+
+	<div class="post-license-wrapper">
+		{% if site.data.locales[lang].copyright.license.template %}
+		  {% capture _replacement %}
+		<a href="{{ site.data.locales[lang].copyright.license.link }}">
+		  {{ site.data.locales[lang].copyright.license.name }}
+		</a>
+		{% endcapture %}
+		  {{ site.data.locales[lang].copyright.license.template | replace: ':LICENSE_NAME', _replacement }}
+		{% endif %}
+	</div>
+</div>
+
+{% if page.comments %}
+<script src="https://giscus.app/client.js"
+        data-repo="tylerwwang/tylerwwang.github.io"
+        data-repo-id="R_kgDOMRHRNg"
+        data-category="Blog"
+        data-category-id="DIC_kwDOMRHRNs4Cjo5_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark_dimmed"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+{% endif %}

@@ -132,5 +132,11 @@
 	.hero-text {
 		height: 90vh;
 	}
-
 }
+
+#page-content-home {
+  padding: $spacing-unit 0;
+  flex: 1;
+  background-color: $background-color;
+}
+
