@@ -16,7 +16,7 @@ function generateGallery(album, production, id, photopath, url) {
 			let path = album.substring(0, album.lastIndexOf("/"));
 			let dev = `<img src="${path}/${filename}" width="500"/>`;
 			let prod =
-				`<img src="//images.weserv.nl/?url=${url}${path}/${filename}&w=500&output=jpg&q=50" alt="${filename}" />`;
+				`<img src="//images.weserv.nl/?url=${url}${path}/${filename}&w=500&output=jpg&q=90" alt="${filename}" />`;
 
 			albumDiv.innerHTML += `
 				<a href="${photopath}?photo=${path}/${filename}" class="no-lightbox">

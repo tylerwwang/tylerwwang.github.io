@@ -1,6 +1,6 @@
 <a href="{{site.basesrc}}/photo?photo={{ include.src }}" class="no-lightbox {{include.class}}">
 	{%- if jekyll.environment == 'production' -%}
-	<img src="//images.weserv.nl/?url={{site.url}}{{site.baseurl}}{{ include.src}}&w={{include.width}}&output=jpg&q=50" alt="{{ include.alt }}" />
+	<img src="//images.weserv.nl/?url={{site.url}}{{site.baseurl}}{{ include.src}}&w={{include.width}}&output=jpg&q=80" alt="{{ include.alt }}" />
 	{%- else -%}
 	<img src="{{site.url}}{{site.baseurl}}{{ include.src}}" width="{{include.width}}"/>
 	{%- endif -%}
