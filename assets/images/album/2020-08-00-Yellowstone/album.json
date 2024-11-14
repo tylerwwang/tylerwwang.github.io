@@ -9,10 +9,18 @@
 	  "caption": "I honestly don't remember exactly where I took this photo, so I had to do a reverse image search. (It worked surprisingly well)",
       "tags": "nature"
     },
+    "canyon-1": {
+      "title": "Waterfall",
+      "tags": "nature water"
+    },
     "stars": {
       "title": "Milky Way",
 	  "caption": "Did I capture any aliens?",
       "tags": "nature astronomy"
+    },
+    "canyon-2": {
+      "title": "Great Canyon of Yellowstone",
+      "tags": "nature water rock"
     }
   }
 }
