@@ -4,7 +4,7 @@ layout: default
 
 {% include lang.html %}
 
-<h1 style="margin-bottom: 15px">{{ page.title }}</h1>
+<h1 style="margin-bottom: 20px">{{ page.title }}</h1>
 
 <div class="post-details">
 	<div>
@@ -23,10 +23,10 @@ layout: default
 			<!-- Author -->
 			{{- site.data.locales[lang].post.written_by -}} <span class="post-detail-info">{{' '}}{{page.author}} </span>
 
-		<span class="post-tag-wrapper">
+		<span class="tag-wrapper">
 			{{- site.data.locales[lang].tabs.tags -}}{{ ': ' }}
 			{% for tag in page.tags %}
-			<span class="post-tag-box"> {{tag}} </span>
+			<span class="tag-box"> {{tag}} </span>
 			{% endfor %}
 		</span>
 

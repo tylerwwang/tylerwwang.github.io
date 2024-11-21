@@ -21,6 +21,29 @@
 }
 
 .photo-viewer-title {
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 	margin-top: 0px;
+
+	#image-album {
+		color: #aaaaaa;
+		font-size: 0.7em;
+		font-weight: 400;
+	}
 }
+
+.photo-viewer-first-row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	justify-content: space-between;
+	align-items: center;
+
+	margin-bottom: 10px;
+
+	#image-tags {
+		margin-top: 0px;
+		font-size: 0.8em;
+	}
+}
+

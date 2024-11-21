@@ -2,11 +2,11 @@
 title: Personal
 layout: default
 permalink: /personal/
+jquery: true
 ---
 
 <h1>Photo Gallery</h1>
 
-<script src="//code.jquery.com/jquery-2.1.0.js"></script>
 <script src="{{site.baseurl}}/js/gallery.js"></script>
 
 <div class="photo-gallery" id="photo-gallery">
@@ -17,16 +17,20 @@ permalink: /personal/
 				{% capture albumId %}{{ albumId | plus:1}}{%endcapture%}
 				<div id="photo-gallery-album-{{albumId}}" class="photo-gallery-album">
 					<script type="text/javascript">
-						generateGallery(
-							"{{album.path}}",
-							{%- if jekyll.environment == 'production' -%}
-								true
-							{%- else -%}
-								false
-							{%- endif -%},
-							"photo-gallery-album-{{albumId}}",
-							"{{site.baseurl}}/photo", "{{site.url}}"
-						);
+						{
+							let albumPath = "{{album.path}}";
+							generateGallery(
+								albumPath,
+								{%- if jekyll.environment == 'production' -%}
+									true
+								{%- else -%}
+									false
+								{%- endif -%},
+								"photo-gallery-album-{{albumId}}",
+								"{{site.baseurl}}/photo", "{{site.url}}",
+								albumPath.substring(0, albumPath.lastIndexOf("/"))
+							);
+						}
 					</script>
 				</div>
 			{% endif %}

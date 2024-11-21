@@ -3,7 +3,10 @@ title: Photo
 lightbox: true
 layout: default
 permalink: /photo/
+jquery: true
 ---
+
+{% include lang.html %}
 
 <div style="border-bottom: white solid 1px; padding-bottom: 20px">
 	<!-- Load Image -->
@@ -12,6 +15,7 @@ permalink: /photo/
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
 		const imageURL = `{{site.url}}${urlParams.get('photo').replace(/\/+$/, "")}`;
+		const albumPath = `${urlParams.get('photo').replace(/\/+$/, "")}`;
 
 
 		var image = document.getElementById("image");
@@ -23,20 +27,22 @@ permalink: /photo/
 
 	<!-- Load Information -->
 	<div class="photo-viewer-information">
-		<h2 class="photo-viewer-title">
-			<span id="image-title"></span>
-			<span id="image-album"></span>
-		</h2>
+		<div class="photo-viewer-first-row">
+			<h2 class="photo-viewer-title" id="image-title-box">
+				<span id="image-title"></span>
+			</h2>
+			<span class="tag-wrapper" id="image-tags">
+				{{- site.data.locales[lang].tabs.tags -}}{{ ': ' }}
+			</span>
+		</div>
 		<p id="image-caption"></p>
 		<span class="photo-viewer-author">
 			<p id="image-datetime"></p>
-			<p>By Tyler Wang</p>
+			<p><span class="filler">By</span> Tyler Wang</p>
 		</span>
 	</div>
-
 </div>
 
-<script src="//code.jquery.com/jquery-2.1.0.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
 <script type="text/javascript">
 	function getMetaData() {
@@ -45,12 +51,23 @@ permalink: /photo/
 		$.getJSON(`${imageURL.substring(0,imageURL.lastIndexOf("/"))}/album.json`, (data) => {
 			let filename = imageURL.substring(imageURL.lastIndexOf('/') + 1, imageURL.lastIndexOf('.'));
 
+			if (data?.album_title) {
+				$("#image-title-box").append(`<a id="image-album" href="/album?album=${albumPath.substring(0,albumPath.lastIndexOf("/"))}">
+					(${data?.album_title})</a>`);
+			}
 			if (data.images[filename]?.title) {
 				$("#image-title").html(data.images[filename]?.title);
-				$("#image-album").html(`- (${data.album_title})`);
 			}
 			if (data.images[filename]?.caption)
 				$("#image-caption").html(data.images[filename]?.caption);
+
+			if (data.images[filename]?.tags) {
+				let tags = data.images[filename]?.tags.split(' ');
+				tags.forEach((value) => {
+					$( '#image-tags' ).append(`<span class='tag-box'>${value}</span>`);
+				});
+			}
+
 		});
 
 		EXIF.getData(img, function () {
@@ -66,8 +83,6 @@ permalink: /photo/
 				}
 			)}`);
 		});
-
-
 	}
 
 	window.onload=getMetaData;

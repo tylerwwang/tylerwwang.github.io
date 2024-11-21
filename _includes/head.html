@@ -29,6 +29,10 @@
 		<link rel="stylesheet" href="{{ site.baseurl }}/assets/lightbox.css">
 	{% endif %}
 
+	{% if page.jquery %}
+		<script src="//code.jquery.com/jquery-2.1.0.js"></script>
+	{% endif %}
+
 	<!-- MathJax -->
 	{% if page.tex %}
 		<script type="text/javascript">

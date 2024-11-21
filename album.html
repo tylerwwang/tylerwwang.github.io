@@ -1,0 +1,63 @@
+---
+title: Album
+layout: default
+permalink: /album/
+jquery: true
+---
+{% include lang.html %}
+<script type="text/javascript">
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const albumURL = `{{site.url}}${urlParams.get('album')}/album.json`;
+	const imagePath = `${urlParams.get('album')}`;
+</script>
+
+<div class="album-information">
+	<h1 id="album-title"></h1>
+	<p id="album-description"></p>
+	<div class="album-info-first-row">
+		<p><span class="filler">By</span> Tyler Wang</p>
+		<span class="tag-wrapper" id="album-tags">
+			<span class="filler">{{- site.data.locales[lang].tabs.tags -}}{{ ': ' }}</span>
+		</span>
+	</div>
+</div>
+
+<div>
+	<div id="album" class="photo-gallery-album">
+		<script src="{{site.baseurl}}/js/gallery.js"></script>
+		<script type="text/javascript">
+			generateGallery(
+				albumURL,
+				{%- if jekyll.environment == 'production' -%}
+					true
+				{%- else -%}
+					false
+				{%- endif -%},
+				"album",
+				"{{site.baseurl}}/photo", "{{site.url}}", imagePath, false
+			);
+		</script>
+	</div>
+	<p style="padding-bottom: 10px; padding-top: 20px;"><a href="/personal">Back to Gallery</a></p>
+</div>
+
+<script>
+	$.getJSON(`${albumURL}/album.json`, (file) => {
+		if (file?.tags) {
+			let tags = file?.tags.split(' ');
+			tags.forEach((value) => {
+				$( '#album-tags' ).append(`<span class='tag-box'>${value}</span>`);
+			});
+		}
+
+		if (file?.description) {
+			$( "#album-description" ).html(file?.description);
+		}
+
+		if (file?.album_title) {
+			$( "#album-title" ).html(file?.album_title);
+		}
+
+	});
+</script>
