@@ -33,7 +33,7 @@
 	}
 }
 
-.post-tag-wrapper {
+.tag-wrapper {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -44,14 +44,12 @@
 
 	margin-top: 1em;
 
-	.post-tag-box {
+	.tag-box {
 		color: white;
 		font-size: 0.9em;
 		padding: 0.2em 0.4em;
 		border-radius: 0.8em;
-
 		cursor: pointer;
-
 		border: white solid 1px;
 	}
 }
