@@ -43,7 +43,7 @@ jquery: true
 </div>
 
 <script>
-	$.getJSON(`${albumURL}/album.json`, (file) => {
+	$.getJSON(`${albumURL}`, (file) => {
 		if (file?.tags) {
 			let tags = file?.tags.split(' ');
 			tags.forEach((value) => {
