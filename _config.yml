@@ -36,6 +36,7 @@ defaults:
       permalink: /posts/:year/:month/:day/:title/
       comments: true
       tex: true
+      theorem: true
 
 sass:
   sass_dir: _sass

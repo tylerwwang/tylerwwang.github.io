@@ -259,6 +259,35 @@ table {
 	padding: 10px 0px;
 }
 
+.footnotes {
+	color: #dddddd;
+	font-size: 0.9em;
+
+	p {
+		display: inline;
+	}
+
+	ol {
+		margin: 20px;
+	}
+}
+
+.footnote-button {
+	background: none;
+	font: $base-font-weight 15px $base-font-family;
+
+	border: 0px;
+	padding: 0px;
+
+	cursor: pointer;
+	color: $brand-color;
+
+	&:hover {
+		color: $text-color;
+		text-decoration: underline;
+	}
+}
+
 .filler {
 	color: #bbb;
 	font-weight: 400 !important;
