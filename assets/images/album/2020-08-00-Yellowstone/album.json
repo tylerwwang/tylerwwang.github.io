@@ -5,18 +5,22 @@
 
   "images": {
     "teton": {
-      "title": "Mountains of Grand Teton",
+      "title": "Grand Teton and a Lake",
 	  "caption": "I honestly don't remember exactly where I took this photo, so I had to do a reverse image search. (It worked surprisingly well)",
       "tags": "nature"
-    },
-    "canyon-1": {
-      "title": "Waterfall",
-      "tags": "nature water"
     },
     "stars": {
       "title": "Milky Way",
 	  "caption": "Did I capture any aliens?",
       "tags": "nature astronomy"
+    },
+    "teton_tree": {
+    	"title": "Grand Teton",
+		"tags": "nature"
+    },
+    "canyon-1": {
+      "title": "Waterfall",
+      "tags": "nature water"
     },
     "canyon-2": {
       "title": "Grand Canyon of Yellowstone?",
