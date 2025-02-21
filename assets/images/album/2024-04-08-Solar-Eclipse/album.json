@@ -1,6 +1,6 @@
 {
   "album_title": "Solar Eclipse",
-  "description": "Images that I took during the April 8, 2024 Solar Eclipse the Shawnee National Forest.",
+  "description": "Images that I took during the April 8, 2024 Solar Eclipse over Shawnee National Forest.",
   "tags": "nature forest astronomy",
 
   "images": {
@@ -10,8 +10,9 @@
     },
     "flower_2": {
       "title": "Purple Flowers",
-      "tags": "nature"
-    },
+      "tags": "nature",
+	  "caption": "Ever wonder why violet light appears purple?"
+	},
     "flower_3": {
       "title": "Weird Flower",
       "tags": "nature"
@@ -23,7 +24,8 @@
     },
     "partial": {
       "title": "Partial Solar Eclipse",
-      "tags": "sun eclipse nature astronomy"
+      "tags": "sun eclipse nature astronomy",
+	  "caption": "Bye bye sun, we'll see you soon. At least I hope ..."
     },
     "tree": {
       "title": "Partial Eclipse with Tree",

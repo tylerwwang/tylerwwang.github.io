@@ -6,12 +6,12 @@
   "images": {
     "teton": {
       "title": "Grand Teton and a Lake",
-	  "caption": "I honestly don't remember exactly where I took this photo, so I had to do a reverse image search. (It worked surprisingly well)",
+	  "caption": "Did a image reverse search to find the location of this image. (It worked surprisingly well)",
       "tags": "nature"
     },
     "stars": {
       "title": "Milky Way",
-	  "caption": "Did I capture any aliens?",
+	  "caption": "Where are the aliens?",
       "tags": "nature astronomy"
     },
     "teton_tree": {
@@ -20,7 +20,8 @@
     },
     "canyon-1": {
       "title": "Waterfall",
-      "tags": "nature water"
+      "tags": "nature water",
+	  "caption": "Who forgot to tunr off the faucet?"
     },
     "canyon-2": {
       "title": "Grand Canyon of Yellowstone?",
