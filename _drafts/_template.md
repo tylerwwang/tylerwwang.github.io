@@ -27,6 +27,7 @@ $$
 \def\bra#1{\left\langle #1 \right\rvert}
 \def\ket#1{\left\lvert #1 \right\rangle}
 \def\braket#1#2{\left\langle #1 \left.\right\lvert #2 \right\rangle}
+\def\tens#1{\stackrel{\leftrightarrow}{#1}}
 
 \def\jand{\quad\text{and}\quad}
 \def\jor{\quad\text{or}\quad}

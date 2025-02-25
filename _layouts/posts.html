@@ -54,20 +54,5 @@ layout: default
 </div>
 
 {% if page.comments %}
-<script src="https://giscus.app/client.js"
-        data-repo="tylerwwang/tylerwwang.github.io"
-        data-repo-id="R_kgDOMRHRNg"
-        data-category="Blog"
-        data-category-id="DIC_kwDOMRHRNs4Cjo5_"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="dark_dimmed"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
+	{% include giscus.html %}
 {% endif %}
