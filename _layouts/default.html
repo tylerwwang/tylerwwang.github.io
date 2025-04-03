@@ -2,13 +2,64 @@
 
 {% include lang.html %}
 
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-theme="dark">
 
   {%- include head.html -%}
 
   <body>
-
     {%- include header.html -%}
+
+	{% if page.image %}
+		<div class="hero-background">
+			<picture class="hero-image" id="hero-image">
+				{%- for i in (0 .. page.image.scale.size) -%}
+					{% if page.image.scale.size == i %}
+						{% break %}
+					{% endif %}
+					<source
+			media="{% if page.image.scale[i].max %}(max-width: {{ page.image.scale[i].max }}){% endif %}{% if page.image.scale[i].max  and page.image.scale[i].min%} and {% endif %}{% if page.image.scale[i].min %}(min-width: {{ page.image.scale[i].min }}){% endif %}"
+			srcset="{{site.baseurl}}/{{page.image.scale[i].source}}"/>
+
+				{%- endfor -%}
+
+				<img src="{{site.baseurl}}/{{page.image.base}}"/>
+			</picture>
+			<picture class="hero-image" id="hero-image-alt">
+				{%- for i in (0 .. page.image-alt.scale.size) -%}
+					{% if page.image-alt.scale.size == i %}
+						{% break %}
+					{% endif %}
+					<source
+			media="{% if page.image-alt.scale[i].max %}(max-width: {{ page.image-alt.scale[i].max }}){% endif %}{% if page.image-alt.scale[i].max  and page.image-alt.scale[i].min%} and {% endif %}{% if page.image-alt.scale[i].min %}(min-width: {{ page.image-alt.scale[i].min }}){% endif %}"
+			srcset="{{site.baseurl}}/{{page.image-alt.scale[i].source}}"/>
+
+				{%- endfor -%}
+
+				<img src="{{site.baseurl}}/{{page.image-alt.base}}"/>
+			</picture>
+		</div>
+
+		<div class="hero-text">
+			<div class="site-title">
+				<h1 >
+					{% if page.title %}
+						{{ page.title }}
+					{% else %}
+						{{ site.site-title }}
+					{% endif %}
+				</h1>
+				<h2>
+					{% if page.subtitle %}
+						{{ page.subtitle }}
+					{% else %}
+						{{ site.subtitle }}
+					{% endif %}
+				</h2>
+			</div>
+
+			<div class="hero-gradient"></div>
+		</div>
+	{% endif %}
 
     <main id="page-content" aria-label="Content">
       <div class="wrapper">
@@ -16,6 +67,7 @@
       </div>
     </main>
 
+	<!--{%- include theme-toggle.html -%}-->
     {%- include footer.html -%}
 
   </body>
