@@ -1,5 +1,4 @@
 .post-box {
-	border-bottom: #999999 solid 1px;
 	padding: 0.7em 0.5em;
 
 	&:last-child {
@@ -14,7 +13,7 @@
 		align-items: flex-end;
 
 		font-size: 0.9em;
-		color: #dddddd;
+		color: color(unem-text-color);
 		text-align: right;
 
 		margin-top: 10px;

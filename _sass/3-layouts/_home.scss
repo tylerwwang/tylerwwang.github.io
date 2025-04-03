@@ -11,12 +11,15 @@
 
 	position: relative;
 
+
 	h1 {
+		color: color(hero-text-color);
 		font-size: clamp(0vh,90px,12vh);
 		text-align: center;
 		margin-bottom: 1vh;
 	}
 	h2 {
+		color: color(hero-text-color);
 		font-size: clamp(0vh,35px,5vh);
 		text-align: center;
 
@@ -36,13 +39,13 @@
 		height: $navbar-height;
 		width: 100%;
 
-		background-image: linear-gradient(rgb(from $background-color r g b/ 0), $background-color);
-		background-image: -moz-linear-gradient(rgb(from $background-color r g b/ 0), $background-color);
-		background-image: -webkit-linear-gradient(rgb(from $background-color r g b/ 0), $background-color);
-		background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, $background-color), color-stop(100%, $background-color));
-		background-image: -ms-gradient(rgb(from $background-color r g b/ 0), $background-color);
-		background-image: -o-gradient(rgb(from $background-color r g b/ 0), $background-color);
-		background-image: linear-gradient(rgb(from $background-color r g b/ 0), $background-color);
+		background-image: linear-gradient(rgb(from color(background-color) r g b/ 0), color(background-color));
+		background-image: -moz-linear-gradient(rgb(from color(background-color) r g b/ 0), color(background-color));
+		background-image: -webkit-linear-gradient(rgb(from color(background-color) r g b/ 0), color(background-color));
+		background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, color(background-color), color-stop(100%, color(background-color))));
+		background-image: -ms-gradient(rgb(from color(background-color) r g b/ 0), color(background-color));
+		background-image: -o-gradient(rgb(from color(background-color) r g b/ 0), color(background-color));
+		background-image: linear-gradient(rgb(from color(background-color) r g b/ 0), color(background-color));
 	}
 }
 
@@ -69,6 +72,13 @@
 	position: absolute;
 	bottom: 0px;
 }
+
+#hero-image-alt {
+	display: none;
+}
+#hero-image {
+}
+
 .hero-background {
 	position: sticky;
 
@@ -80,7 +90,7 @@
 	height: 100vh;
 	width: 100vw;
 
-	background: rgba(0, 0, 0,0.3);
+	background: color(hero-overlay-color);
 
 	z-index: -2;
 
@@ -137,6 +147,6 @@
 #page-content-home {
   padding: $spacing-unit 0;
   flex: 1;
-  background-color: $background-color;
+  background-color: color(background-color);
 }
 

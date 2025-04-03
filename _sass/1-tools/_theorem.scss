@@ -1,10 +1,12 @@
 .math-env {
-	padding-top: 35px;
+	padding-top: 28px;
 	padding-bottom: 25px;
 
-	background: #3b3b3b;
-	border-left: 4px solid #7e7671;
+	background: color(theorem-background-color);
+	border-left: 5px solid color(theorem-border-color);
 	font-size: $base-font-size;
+
+	font-style: normal;
 
 	h5 {
 		margin-top: 0px;
@@ -33,10 +35,10 @@
 	display: inline;
 
 	cursor: pointer;
-	color: $brand-color;
+	color: color(brand-color);
 
 	&:hover {
-		color: $text-color;
+		color: color(text-color);
 		text-decoration: underline;
 	}
 }

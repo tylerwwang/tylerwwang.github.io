@@ -2,8 +2,8 @@
 
 // Define defaults for each variable.
 
-$base-font-family: "Source Sans 3", sans-serif !default;
-$base-font-size:   18px !default;
+$base-font-family: "Crimson Pro", serif !default;
+$base-font-size:   20px !default;
 $base-font-weight: 300 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
@@ -11,32 +11,14 @@ $base-line-height: 1.5 !default;
 // Headings
 $heading-font-weight: 500 !default;
 
-$font-size-h1:  36px !default;
-$font-size-h2:  30px !default;
-$font-size-h3:  28px !default;
-$font-size-h4:  24px !default;
-$font-size-h5:  22px !default;
-$font-size-h6:  20px !default;
+$font-size-h1:  38px !default;
+$font-size-h2:  34px !default;
+$font-size-h3:  32px !default;
+$font-size-h4:  28px !default;
+$font-size-h5:  25px !default;
+$font-size-h6:  23px !default;
 
 $spacing-unit:     40px !default;
-
-$text-color:       #fefefe !default;
-$brand-color:      #7fb2ff !default;
-$visited-color:    #bc94ff !default;
-
-$background-color: #1e1e1e !default;
-$code-background-color: #181818 !default;
-$blockquote-background-color: #222328  !default;
-$blockquote-foreground-color: #dddddd !default;
-
-$grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
-
-$dark-gray-color: #151515 !default;
-
-$hover-color: lighten($dark-gray-color, 10%) !default;
-$overline-color: #aaaaaa !default;
 
 $table-text-align: left !default;
 
@@ -44,14 +26,13 @@ $table-text-align: left !default;
 $content-width:    1000px !default;
 
 $navbar-height:     60px !default;
-$navbar-overline:    0px !default;
 
-$on-finger:        300px !default;
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
+$on-finger:        300px;
+$on-palm:          600px;
+$on-laptop:        800px;
 
-$landscape:    landscape !default;
-$portrait:      portrait !default;
+$landscape:    landscape;
+$portrait:      portrait;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -72,6 +53,76 @@ $portrait:      portrait !default;
   }
 }
 
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
+[data-theme="light"] {
+	--text-color:       #000;
+	--unem-text-color:  #333;
+	--brand-color:      #0059ff;
+	--visited-color:    #8d11e5;
+
+	--background-color: 		#eeeada;
+	--base-background-color:	#e3dcc4;
+
+	--header-color:				#1b2a4c;
+    --header-text-color:		#fefefe;
+    --header-underline-color:	#1b2849;
+	--hover-color:				#18213a;
+
+	--code-background-color: #f4eed2;
+	--code-border-color: #888;
+
+	--blockquote-background-color: #cebc9d;
+	--blockquote-foreground-color: #222;
+	--blockquote-border-color: 	   #9b7763;
+
+	--theorem-background-color: #b9c6b3;
+	--theorem-border-color: 	#8ba2a1;
+
+	--table-header-color: #ccc9bb;
+	--table-row-color-even: #e8e2d0;
+	--table-row-color-odd: #f3eed9;
+	--table-border-color: #222;
+
+	--hero-overlay-color: #00000019;
 }
+[data-theme="dark"] {
+	--text-color:       #fefefe;
+	--unem-text-color:  #D3D3D3;
+	--brand-color:      #7fb2ff;
+	--visited-color:    #bc94ff;
+
+	--background-color: 		#1e1e1e;
+	--base-background-color:	#151515;
+
+	--header-color: 			#151515;
+	--header-text-color: 		#fefefe;
+	--header-underline-color: 	#aaaaaa;
+	--hover-color:				#2f2f2f;
+
+	--code-background-color: #181818;
+	--code-border-color: #181818;
+
+	--blockquote-background-color: #222328;
+	--blockquote-foreground-color: #dddddd;
+	--blockquote-border-color: 	   #466c69;
+
+	--theorem-background-color: #3b3c3c;
+	--theorem-border-color: 	#6f8685;
+
+	--table-header-color: #212121;
+	--table-row-color-even: #282828;
+	--table-row-color-odd: #2b2b2b;
+	--table-border-color: #909090;
+
+	--hero-overlay-color: #0000004c;
+}
+
+
+:root {
+	--hero-text-color: #fefefe;
+}
+
+@function color($color-name) {
+  @return var(--#{$color-name});
+}
+
+

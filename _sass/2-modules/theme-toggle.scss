@@ -1,0 +1,29 @@
+.theme-toggle {
+	position: fixed;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	left: 20px;
+	bottom: 20px;
+
+	button {
+		display: flex;
+
+		background: color(background-color);
+		border: solid 2px color(unem-text-color);
+		border-radius: 10px;
+
+		min-height: 25px;
+		min-width: 25px;
+
+		padding: 10px;
+
+	}
+
+	@include media-query($on-palm) {
+		left: 15px;
+		bottom: 15px;
+	}
+}

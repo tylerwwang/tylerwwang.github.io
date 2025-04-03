@@ -1,13 +1,16 @@
 ---
-layout: home
+layout: default
 permalink: /
 image:
     scale:
-        - source: "assets/images/hero/hero-1080.webp"
-          min: "1300px"
-        - source: "assets/images/hero/hero-720.webp"
-          max: "1300px"
-    base: "assets/youtube-logo.webp"
+        - source: "assets/images/hero/hero-1080-dark.webp"
+          min: "1000px"
+    base: "assets/images/hero/hero-720-dark.webp"
+image-alt:
+    scale:
+        - source: "assets/images/hero/hero-1080-light.webp"
+          min: "1000px"
+    base: "assets/images/hero/hero-720-light.webp"
 ---
 
 
@@ -23,10 +26,7 @@ image:
 		</div>
 		<div id="about-link" ><a href="{{site.baseurl}}/about">Learn more</a></div>
 	</div>
-	{% include image.html src="/assets/images/album/2020-08-00-Yellowstone/teton.jpg" alt="stars" width=480 class="home-image"%}
-	<!--
-	<img src="{{site.baseurl}}/assets/images/home/teton@480p.jpg" alt="stars"/>
-	-->
+	{% include image.html src="/assets/images/album/2020-08-00-Yellowstone/teton.jpg" alt="Grand Teton" width=480 class="home-image"%}
 </div>
 
 {% if site.posts.size > 0 %}
@@ -39,17 +39,6 @@ image:
 	</div>
 {% endif %}
 
-<div class="home-gallery">
-	<h1>Personal Items</h1>
-	<h2>Photos</h2>
-	<div class="home-photo-highlights">
-		{% for photo in site.data.photo_highlights %}
-			{% include image.html src=photo alt="photo highlights" width=500 class="home-image-highlights"%}
-		{% endfor %}
-	</div>
-	<p style="padding-top: 1em;"><a style="cursor: pointer" href="{{site.baseurl}}/personal">See More</a></p>
-</div>
-
 <div class="home-links">
 	<h1>Miscellaneous Items</h1>
 	<ul>
@@ -61,6 +50,17 @@ image:
 			Since this is still a work in progress, many sections are incomplete and I would kindly ask to pardon any errors.
 		</li>
 	</ul>
+</div>
+
+<div class="home-gallery">
+	<h1>Personal Items</h1>
+	<h2>Photos</h2>
+	<div class="home-photo-highlights">
+		{% for photo in site.data.photo_highlights %}
+			{% include image.html src=photo alt="photo highlights" width=500 class="home-image-highlights"%}
+		{% endfor %}
+	</div>
+	<p style="padding-top: 1em;"><a style="cursor: pointer" href="{{site.baseurl}}/personal">See More</a></p>
 </div>
 
 </div>

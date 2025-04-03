@@ -26,9 +26,9 @@
 
 .photo-gallery-album {
 	.gallery-album-link {
-		color: $text-color;
+		color: color(text-color);
 		&:visited {
-			color: $text-color;
+			color: color(text-color);
 		}
 	}
 }

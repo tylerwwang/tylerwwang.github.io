@@ -9,3 +9,4 @@ vendor
 !/.gitignore
 *.lock
 
+test.md

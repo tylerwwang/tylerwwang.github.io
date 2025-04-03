@@ -17,11 +17,11 @@
 	  font-size: 1.07em;
   	}
 	#back-to-home {
-	  color: $text-color;
+	  color: color(text-color);
 	  padding-top: 20px;
   	}
 	a:visited {
-		color: $text-color;
+		color: color(text-color);
 		margin: 30px;
 	}
 }
