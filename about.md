@@ -23,8 +23,9 @@ Whilst the first viable quantum computer is still possibly decades in the future
 This opportunity provided me with a great window into this field, that sat quite foreign to me, and an insight into what is to come in the future. -->
 
 Outside of academia, I enjoy music — both playing it and watching others perform.
-Though they seem very different, I believe these interests are inherently connected; somehow, the rigor of mathematics is deeply intertwined with the freedom of music and art. This may not be accidental, as beneath the apparent freedom of art lies a hidden assortment of structures and patterns that give it a very mathematical quality.
-But perhaps, it could also be that beneath the rigor of mathematics, there exists a world of beauty and freedom—one that feels much more like art, than science ...
+Though they seem very different, I believe these interests are inherently connected; somehow, the rigor of mathematics is deeply intertwined with the beauty of music and art.
+This, however, may not be accidental, as beneath that apparent beauty lies a hidden, an assortment of structures and patterns that give it a very mathematical quality.
+But perhaps, it's also possible that beneath the rigor of mathematics exists some sort of wonderland — a place one more commonly associates with art, than science ...
 
 Accordingly, this site serves as a platform for sharing my work that best reflects my journey.
 
