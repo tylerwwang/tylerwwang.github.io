@@ -11,9 +11,10 @@
 	button {
 		display: flex;
 
-		background: color(background-color);
-		border: solid 2px color(unem-text-color);
-		border-radius: 10px;
+		background: color(base-background-color);
+		border-radius: 20px;
+
+		filter: drop-shadow(3px 3px 3px black);
 
 		min-height: 25px;
 		min-width: 25px;

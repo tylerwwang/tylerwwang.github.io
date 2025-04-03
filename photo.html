@@ -88,4 +88,6 @@ jquery: true
 	window.onload=getMetaData;
 </script>
 
-{% include giscus.html %}
+{% if page.comments %}
+	{% include giscus.html %}
+{% endif %}

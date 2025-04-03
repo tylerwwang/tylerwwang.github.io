@@ -2,7 +2,7 @@
 
 {% include lang.html %}
 
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-theme="dark">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" data-theme="light">
 
   {%- include head.html -%}
 
@@ -24,6 +24,8 @@
 
 				<img src="{{site.baseurl}}/{{page.image.base}}"/>
 			</picture>
+
+			{% if page.image-alt %}
 			<picture class="hero-image" id="hero-image-alt">
 				{%- for i in (0 .. page.image-alt.scale.size) -%}
 					{% if page.image-alt.scale.size == i %}
@@ -36,7 +38,31 @@
 				{%- endfor -%}
 
 				<img src="{{site.baseurl}}/{{page.image-alt.base}}"/>
+
+				<script>
+					var heroImage = document.getElementById('hero-image');
+					var heroImageAlt = document.getElementById('hero-image-alt');
+
+					function updateHeroImage() {
+						if(htmlElement.getAttribute('data-theme') == 'light') {
+							heroImage.style.display = "none";
+							heroImageAlt.style.display = "flex";
+						}
+						else {
+							heroImageAlt.style.display = "none";
+							heroImage.style.display = "flex";
+						}
+					}
+
+					updateHeroImage();
+
+					htmlElement.addEventListener('update-theme', (e) => {
+						updateHeroImage();
+					});
+				</script>
 			</picture>
+			{% endif %}
+
 		</div>
 
 		<div class="hero-text">
@@ -67,7 +93,7 @@
       </div>
     </main>
 
-	<!--{%- include theme-toggle.html -%}-->
+	{%- include theme-toggle.html -%}
     {%- include footer.html -%}
 
   </body>

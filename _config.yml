@@ -33,7 +33,7 @@ defaults:
       layout: "posts"
       author: "Tyler Wang"
       permalink: /posts/:year/:month/:day/:title/
-      comments: true
+      comments: false
       tex: true
       theorem: true
 
