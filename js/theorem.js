@@ -13,6 +13,10 @@ function getLastChild(el){
   return firstChild;
 }
 
+/*
+ * Usage: Wrap theorem text in <blockquote></blockquote> with id set as reference lable and class as type of theorem.
+ */
+
 window.addEventListener("DOMContentLoaded",
 	() => {
 		//creating environments.
@@ -135,6 +139,10 @@ window.addEventListener("DOMContentLoaded",
 			lastchild.innerHTML += "&#8196;";
 		});
 
+		/*
+		 * Usage: Wrap type theorem referencing in <a></a> with href set as theorem label to be referenced
+		 * with class name ref.
+		 */
 		//generating references
 		let refs = document.getElementsByClassName('ref');
 
@@ -143,7 +151,7 @@ window.addEventListener("DOMContentLoaded",
 			let type = ref.innerHTML;
 			let id = ref.href.substring(ref.href.lastIndexOf('#') + 1);
 
-			button.innerHTML = `${type} <button class="math-ref-link">(${references[id]})</button>`;
+			button.innerHTML = `${type} <button class="math-ref-link">${references[id]}</button>`;
 			button.classList.add('math-ref');
 
 			ref.parentNode.replaceChild(button, ref);

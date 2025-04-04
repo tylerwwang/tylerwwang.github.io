@@ -1,36 +1,37 @@
+/*
+ * Usage: Wrap footnote text in <em></em> with class name foot-tag
+ */
+const footnotelist = [];
+
 window.addEventListener("DOMContentLoaded",
 	() => {
-		let fn = document.getElementsByClassName('footnote');
-		let revFn = document.getElementsByClassName('reversefootnote');
+		let fn = document.getElementsByClassName('foot-tag');
 
 		[...fn].forEach(function(el) {
 			let button = document.createElement('span');
-			let id = el.href.substring(el.href.lastIndexOf('#') + 1);
+			footnotelist.push(el.innerHTML);
 
-			button.innerHTML = `<button class="footnote-button">${el.innerHTML}</button>`;
+			button.innerHTML = `<button class="footnote-button">${footnotelist.length}</button>`;
 			button.classList.add('footnote');
 
 			el.parentNode.replaceChild(button, el);
 
-
 			button.addEventListener("click", function() {
-				document.getElementById(id)?.scrollIntoView({block: "center", behavior: "smooth"});
-			})
+				document.getElementById(`footnote-number-${footnotelist.length}`)?.scrollIntoView({block: "center", behavior: "smooth"});
+			});
 		});
 
-		[...revFn].forEach(function(el) {
-			let button = document.createElement('span');
-			let id = el.href.substring(el.href.lastIndexOf('#') + 1);
+		if (footnotelist.length > 0) {
+			let wrapper = document.getElementById('main-page-wrapper');
+			let footnotes = document.createElement('ol');
 
-			button.innerHTML = `<button class="footnote-button">${el.innerHTML}</button>`;
-			button.classList.add('reversefootnote');
+			footnotes.classList.add('footnotes');
 
-			el.parentNode.replaceChild(button, el);
+			[... footnotelist].forEach((note, i) => {
+				footnotes.innerHTML += `<li id='footnote-number-${i+1}'>${note}</li>`;
+			});
 
-
-			button.addEventListener("click", function() {
-				document.getElementById(id)?.scrollIntoView({block: "center", behavior: "smooth"});
-			})
-		});
+			wrapper.appendChild(footnotes);
+		}
 	}
 )

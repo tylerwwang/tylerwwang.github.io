@@ -265,21 +265,22 @@ table {
 }
 
 .footnotes {
-	color: #dddddd;
-	font-size: 0.9em;
-
-	p {
-		display: inline;
-	}
-
+	font-size: 0.8em;
 	ol {
 		margin: 20px;
 	}
 }
 
+.foot-tag {
+	display: none;
+}
+
 .footnote-button {
 	background: none;
-	font: $base-font-weight 15px $base-font-family;
+	font: $base-font-weight 0.8em $base-font-family;
+
+	display: inline-block;
+	vertical-align: super;
 
 	border: 0px;
 	padding: 0px;
@@ -294,7 +295,7 @@ table {
 }
 
 .filler {
-	color: #bbb;
+	color: color(unem-text-color);
 	font-weight: 400 !important;
 }
 
