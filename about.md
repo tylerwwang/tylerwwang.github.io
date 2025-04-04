@@ -45,6 +45,6 @@ As in the poem "Ozymandias":
 >Nothing beside remains. Round the decay\
 >Of that colossal Wreck, boundless and bare\
 >The lone and level sands stretch far away.
-
---- Percy Bysshe Shelley (1818)
+>
+><small>--- Percy Bysshe Shelley (1818)</small>
 
