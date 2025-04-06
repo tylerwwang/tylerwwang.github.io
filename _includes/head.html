@@ -46,12 +46,16 @@
 		}
 	</script>
 
-	<script type="text/javascript" src="{{site.baseurl}}/js/footnote.js"></script>
 
 	<!-- Analytics -->
 	{%- if jekyll.environment == 'production' and site.google_analytics -%}
 	  {%- include google-analytics.html -%}
 	{%- endif -%}
+
+	<!-- Footnotes -->
+	{% if page.footnotes %}
+		<script type="text/javascript" src="{{site.baseurl}}/js/footnote.js"></script>
+	{% endif %}
 
 	<!-- Lightbox -->
 	{% if page.lightbox %}

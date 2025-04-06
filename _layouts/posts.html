@@ -1,5 +1,6 @@
 ---
 layout: default
+no_footnote_box: true;
 ---
 
 {% include lang.html %}
@@ -40,6 +41,11 @@ layout: default
 
 <div class="post-content">
 	{{ content }}
+
+
+	{% if page.footnotes%}
+	<div id="footnote-box"><strong>Enable JavaScript to view footnotes</strong></div>
+	{% endif %}
 
 	<div class="post-license-wrapper">
 		{% if site.data.locales[lang].copyright.license.template %}

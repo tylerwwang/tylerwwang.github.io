@@ -85,7 +85,10 @@ $portrait:      portrait;
 	--hero-overlay-color: #00000019;
 
 	--toggle-shadow-color: #555;
+
+	--highlight-color: #ffeaad;
 }
+
 [data-theme="dark"] {
 	--text-color:       #fefefe;
 	--unem-text-color:  #D3D3D3;
@@ -118,6 +121,8 @@ $portrait:      portrait;
 	--hero-overlay-color: #0000004c;
 
 	--toggle-shadow-color: #000;
+
+	--highlight-color: #6d6752;
 }
 
 

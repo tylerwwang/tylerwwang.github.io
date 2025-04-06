@@ -34,6 +34,7 @@ defaults:
       author: "Tyler Wang"
       permalink: /posts/:year/:month/:day/:title/
       comments: false
+      footnotes: true
       tex: true
       theorem: true
 
