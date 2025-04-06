@@ -26,7 +26,15 @@
 		align-items: center;
 
 		img {
+			animation: offHoverPhoto .4s ease-in-out;
 			width: 100%;
+		}
+
+		&:hover {
+			img {
+			  transform: scale(1.05);
+			  animation: onHoverPhoto .3s ease-in-out;
+			}
 		}
 	}
 
@@ -84,11 +92,15 @@
 	a {
 		height: fit-content;
 		width: fit-content;
+		img {
+			animation: offHoverPhoto .4s ease-in-out;
+		}
 
 		&:hover {
 			img {
-			  transform: scale(1.02);
-		  	}
+			  transform: scale(1.05);
+			  animation: onHoverPhoto .3s ease-in-out;
+			}
 		}
 	}
 

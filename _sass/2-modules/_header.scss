@@ -128,6 +128,8 @@
 
 		border-left: 2px solid #FFFFFF;
 
+		animation: slideInMenu .2s ease-in-out;
+
 
 		a {
 			display: block;
@@ -155,10 +157,15 @@
 
 		background: black;
 		opacity: 70%;
+
+		animation: darkenPageMenu .2s ease-in-out;
 	}
 
 	.hide-menu-bar {
 		display: none !important;
+		.nav-sidebar {
+			animation: slideOutMenu .2s ease-in-out;
+		}
 	}
 
 
@@ -200,4 +207,18 @@
 
 		transform: scale(1.1);
 	}
+}
+
+@keyframes darkenPageMenu {
+	0% {opacity: 0%;}
+	100% {opacity: 70%;}
+}
+@keyframes slideInMenu {
+	00% {transform: translateX(100%);}
+	100% {transform: translateX(0%);}
+}
+
+@keyframes slideOutMenu {
+	0% {transform: translateX(0%);}
+	100% {transform: translateX(100%);}
 }

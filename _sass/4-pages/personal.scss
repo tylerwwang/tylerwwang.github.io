@@ -10,10 +10,14 @@
 	a {
 		height: fit-content;
 		width: fit-content;
+		img {
+			animation: offHoverPhoto .4s ease-in-out;
+		}
 
 		&:hover {
 			img {
-			  transform: scale(1.02);
+			  transform: scale(1.05);
+			  animation: onHoverPhoto .3s ease-in-out;
 		  	}
 		}
 	}
@@ -22,6 +26,18 @@
 		display: block;
 		padding: 10px 0px;
 	}
+}
+
+@keyframes onHoverPhoto {
+	0% {transform: scale(1);}
+	70% {transform: scale(1.05);}
+	100% {transform: scale(1.05);}
+}
+
+@keyframes offHoverPhoto {
+	0% {transform: scale(1.05);}
+	70% {transform: scale(1);}
+	100% {transform: scale(1);}
 }
 
 .photo-gallery-album {
