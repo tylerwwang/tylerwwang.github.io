@@ -10,15 +10,25 @@
 		</span>
    	   	<span class="post-data-box">
 			<div class="post-date-info">
-		 		{{- site.data.locales[lang].post.posted -}} {{' '}} {{include.post.date | date: "%B %d, %Y" }}
 		 	 	{% if include.post.revised %}
-		 	 		<span style="color:white; padding: 4px;">&#x2022</span>
-		 	 		{{- site.data.locales[lang].post.updated -}}{{' '}} {{include.post.revised | date: "%B %d, %Y" }}
+		 	 		{{- site.data.locales[lang].post.updated -}}{{' '}}
+					<span class="post-info-details">
+						{{include.post.revised | date: "%B %d, %Y" }}
+					</span>
+		 	 		<span style="font-size: 0.6em">&bull;</span>
 		 	 	{% endif %}
+		 		{{- site.data.locales[lang].post.posted -}} {{' '}}
+					<span class="post-info-details">
+						{{include.post.date | date: "%B %d, %Y" }}
+					</span>
 		 	 </div>
 		 	 <div class="post-author-info">
 	  			{{- site.data.locales[lang].post.written_by -}}
-				<span class="post-detail-info">{{' '}}{{include.post.author}}</span>
+				<span class="post-detail-info">{{' '}}
+					<span class="post-info-details">
+						{{include.post.author}}
+					</span>
+</span>
 	 		</div>
    		</span>
 	</div>

@@ -13,6 +13,7 @@ image-alt:
     base: "assets/images/hero/hero-720-light.webp"
 ---
 
+{% include lang.html %}
 
 <div class="home-introduction">
 	<div class="intro-text">
@@ -32,7 +33,7 @@ image-alt:
 {% if site.posts.size > 0 %}
 	<div class="home-blog">
 		<h1 style="margin-bottom: 0px">Recent Posts</h1>
- 	 	{% for post in site.posts  limit: 3%}
+ 	 	{% for post in site.posts  limit: 5%}
  	 		{% include blog_post_box.html post=post %}
  	 	{% endfor %}
 		<p style="padding-top: 1em;"><a style="cursor: pointer" href="{{site.baseurl}}/blog">See More</a></p>

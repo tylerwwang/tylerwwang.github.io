@@ -164,10 +164,10 @@ blockquote {
   letter-spacing: -1px;
   font-style: italic;
 
-  padding: 30px;
+  padding: 30px 35px;
   padding-bottom: 32px;
 
-  font-size: 24px;
+  font-size: 22px;
 
   > :last-child {
     margin-bottom: 0;
@@ -283,85 +283,9 @@ table {
 	}
 }
 
-.foot-tag {
-	display: none;
-}
-
-.footnote-button {
-	background: none;
-	font: $base-font-weight 0.8em $base-font-family;
-
-	display: inline-block;
-	vertical-align: super;
-
-	border: 0px;
-	padding: 0px;
-
-	cursor: pointer;
-	color: color(brand-color);
-
-	&:hover {
-		color: color(text-color);
-		text-decoration: underline;
-	}
-}
-.footnote-back-button {
-	background: none;
-	font: $base-font-weight 0.8em $base-font-family;
-
-	display: inline-block;
-
-	border: 0px;
-	padding: 0px;
-
-	cursor: pointer;
-	color: color(brand-color);
-
-	&:hover {
-		color: color(text-color);
-		text-decoration: underline;
-	}
-}
-
-.footnote-animate {
-	animation: footnote-scale-animation 1.8s ease 0.5s;
-
-	span {
-		animation: footnote-highlight-animation 1.8s ease-in-out 0.5s;
-	}
-}
-
-.footnote-tag-animate {
-	button{
-		animation: footnote-tag-scale-animation 1.5s ease 0.5s,
-			footnote-highlight-animation 1.5s ease-in-out 0.5s;
-	}
-}
-
-@keyframes footnote-highlight-animation {
-	0% {background-color: #00000000;}
-	10% {background-color: color(highlight-color);}
-	80% {background-color: color(highlight-color);}
-	100% {background-color: #00000000;}
-}
-
-@keyframes footnote-scale-animation {
-	0% {transform: scale(1);}
-	5% {transform: scale(1.05);}
-	80% {transform: scale(1.05);}
-	100% {transform: scale(1);}
-}
-
-@keyframes footnote-tag-scale-animation {
-	0% {transform: scale(1);}
-	5% {transform: scale(1.5);}
-	80% {transform: scale(1.5);}
-	100% {transform: scale(1);}
-}
-
 .filler {
 	color: color(unem-text-color);
-	font-weight: 400 !important;
+	weight: $base-font-weight;
 }
 
 button {

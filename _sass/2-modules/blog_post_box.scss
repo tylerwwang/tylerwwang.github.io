@@ -1,5 +1,5 @@
 .post-box {
-	padding: 0.7em 0.5em;
+	padding: 0.7em 0px;
 
 	&:last-child {
 		border: 0px;
@@ -26,6 +26,18 @@
 			font-size: 0.8em;
 			margin: 0px;
 			align-items: flex-start;
+		}
+
+		.post-date-info {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			gap: 5px;
+		}
+
+		.post-info-details {
+			color: color(text-color);
 		}
 	}
 }

@@ -11,25 +11,31 @@ no_footnote_box: true;
 	<div>
 		<div>
 			<!-- Posted -->
-			{{- site.data.locales[lang].post.posted -}} {{' '}} <span class="post-detail-info"> {{' '}} {{page.date | date: "%B %d, %Y" }} </span>
-
-
-		  {% if post.revised %}
-				<span style="color:white; padding: 2px;">&#x2022</span>
-				<!-- Modified -->
-				{{- site.data.locales[lang].post.updated -}} <span class="post-detail-info"> {{' '}} {{page.revised | date: "%B %d, %Y" }} </span>
+			{{- site.data.locales[lang].post.posted -}} {{' '}}
+			<span class="post-detail-info">
+				{{' '}} {{page.date | date: "%B %d, %Y" }}
+			</span>
+		</div>
+		<div>
+			<!-- Modified -->
+		  	{% if page.revised %}
+				{{- site.data.locales[lang].post.updated -}}
+				<span class="post-detail-info">
+					{{' '}} {{page.revised | date: "%B %d, %Y" }}
+				</span>
 		  {% endif %}
 		</div>
 		<div>
 			<!-- Author -->
-			{{- site.data.locales[lang].post.written_by -}} <span class="post-detail-info">{{' '}}{{page.author}} </span>
+			{{- site.data.locales[lang].post.written_by -}}
+			<span class="post-detail-info">{{' '}}{{page.author}} </span>
 
-		<span class="tag-wrapper">
-			{{- site.data.locales[lang].tabs.tags -}}{{ ': ' }}
-			{% for tag in page.tags %}
-			<span class="tag-box"> {{tag}} </span>
-			{% endfor %}
-		</span>
+			<span class="tag-wrapper">
+				{{- site.data.locales[lang].tabs.tags -}}{{ ' ' }}
+				{% for tag in page.tags %}
+				<span class="tag-box"> {{tag}} </span>
+				{% endfor %}
+			</span>
 
 		</div>
 	</div>

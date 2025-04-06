@@ -8,7 +8,11 @@ jquery: true
 
 {% include lang.html %}
 
-<div style="border-bottom: white solid 1px; padding-bottom: 20px">
+{% if page.comments %}
+<div style="border-bottom: var(--text-color) solid 1px; padding-bottom: 0.5em">
+{% else %}
+<div>
+{% endif %}
 	<!-- Load Image -->
 	<a id="link" class="photo-viewer-link"><img width="100%" id="image" class="photo-viewer-image" alt="image from album"/></a>
 	<script type="text/javascript">
@@ -32,14 +36,21 @@ jquery: true
 				<span id="image-title"></span>
 			</h2>
 			<span class="tag-wrapper" id="image-tags">
-				{{- site.data.locales[lang].tabs.tags -}}{{ ': ' }}
+				{{- site.data.locales[lang].tabs.tags -}}{{" "}}
 			</span>
 		</div>
 		<p id="image-caption"></p>
 		<span class="photo-viewer-author">
 			<p id="image-datetime"></p>
-			<p><span class="filler">By</span> Tyler Wang</p>
+			<div>
+				{{- site.data.locales[lang].post.written_by -}}
+				<span class="photo-detail-info">{{' '}}Tyler Wang </span>
+			</div>
 		</span>
+	</div>
+
+	<div class="photo-license">
+		May not be redistributed without written consent of owner.
 	</div>
 </div>
 
@@ -74,14 +85,14 @@ jquery: true
 			let date = Date.parse(EXIF.getTag(this, "DateTimeOriginal").split(' ')[0].replaceAll(":","-"));
 			let formatDate = new Date(date);
 
-			$("#image-datetime").html(`${formatDate.toLocaleDateString(
+			$("#image-datetime").html(`Taken <span class='photo-detail-info'>${formatDate.toLocaleDateString(
 				undefined, {
   		 			year: 'numeric',
   		 			month: 'long',
   		 			day: 'numeric',
 					timeZone: 'UTC'
 				}
-			)}`);
+			)}</span>`);
 		});
 	}
 
