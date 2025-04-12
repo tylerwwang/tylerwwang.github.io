@@ -8,6 +8,13 @@
 	left: 20px;
 	bottom: 20px;
 
+	animation: offHoverLink .3s ease-in-out;
+
+	&:hover {
+		transform: scale(1.2);
+		animation: onHoverLink .2s ease-in-out;
+	}
+
 	button {
 		display: flex;
 
@@ -21,10 +28,23 @@
 
 		padding: 10px;
 
+
 	}
 
 	@include media-query($on-palm) {
 		left: 15px;
 		bottom: 15px;
 	}
+}
+
+@keyframes onHoverLink {
+	0% {transform: scale(1);}
+	70% {transform: scale(1.2);}
+	100% {transform: scale(1.2);}
+}
+
+@keyframes offHoverLink {
+	0% {transform: scale(1.2);}
+	70% {transform: scale(1);}
+	100% {transform: scale(1);}
 }
