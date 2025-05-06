@@ -82,17 +82,19 @@ jquery: true
 		});
 
 		EXIF.getData(img, function () {
-			let date = Date.parse(EXIF.getTag(this, "DateTimeOriginal").split(' ')[0].replaceAll(":","-"));
+			let date = Date.parse(EXIF.getTag(this, "DateTimeOriginal")?.split(' ')[0].replaceAll(":","-"));
 			let formatDate = new Date(date);
 
-			$("#image-datetime").html(`Taken <span class='photo-detail-info'>${formatDate.toLocaleDateString(
-				undefined, {
-  		 			year: 'numeric',
-  		 			month: 'long',
-  		 			day: 'numeric',
-					timeZone: 'UTC'
-				}
-			)}</span>`);
+			if(date) {
+				$("#image-datetime").html(`Taken <span class='photo-detail-info'>${formatDate.toLocaleDateString(
+					undefined, {
+  			 			year: 'numeric',
+  			 			month: 'long',
+  			 			day: 'numeric',
+						timeZone: 'UTC'
+					}
+				)}</span>`);
+			}
 		});
 	}
 
