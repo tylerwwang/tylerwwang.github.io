@@ -151,7 +151,7 @@ window.addEventListener("DOMContentLoaded",
 			let type = ref.innerHTML;
 			let id = ref.href.substring(ref.href.lastIndexOf('#') + 1);
 
-			button.innerHTML = `${type} <button class="math-ref-link">${references[id]}</button>`;
+			button.innerHTML = `${type} <button class="math-ref-link">(${references[id]})</button>`;
 			button.classList.add('math-ref');
 
 			ref.parentNode.replaceChild(button, ref);
