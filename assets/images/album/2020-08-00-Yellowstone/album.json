@@ -1,6 +1,6 @@
 {
   "album_title": "Yellowstone",
-  "description": "Highlights of Yellowstone road trip.",
+  "description": "Highlights of Yellowstone road trip. (2020)",
   "tags": "roadtrip nature",
 
   "images": {
@@ -26,6 +26,15 @@
     "canyon-2": {
       "title": "Grand Canyon of Yellowstone?",
       "tags": "nature water rock"
-    }
+    },
+	"tree": {
+		"title": "Tree in the Mountains",
+		"caption": "No wonder California has so many forest fires.",
+		"tags": "nature mountain tree"
+	},
+	"lake": {
+		"title": "Just the Lake",
+		"tags": "nature lake water"
+	}
   }
 }
