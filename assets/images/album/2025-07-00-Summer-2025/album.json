@@ -1,0 +1,40 @@
+{
+  "album_title": "Summer 2025",
+  "description": "Images from around Central Illinois over Summer of 2025.",
+  "tags": "nature corn-fields midwest",
+
+  "images": {
+	  "farmhouse": {
+		  "caption": "Little White Farmhouse",
+		  "description": "Wonder if it's still inhabitable.",
+		  "tags": "midwest corn-fields"
+	  },
+	  "gravel-and-corn-1": {
+		  "caption": "Gravel and Corn One",
+		  "tags": "midwest corn-fields"
+	  },
+	  "gravel-and-corn-2": {
+		  "caption": "Gravel and Corn Two",
+		  "tags": "midwest corn-fields"
+	  },
+	  "corn": {
+		  "caption": "Corn",
+		  "description": "Flour corn grown in a garden",
+		  "tags": "macro indoors"
+	  },
+	  "morecorn": {
+		  "caption": "More Corn",
+		  "description": "More flour corn grown in a garden",
+		  "tags": "macro indoors"
+	  },
+	  "sunset": {
+		  "caption": "Setting Sun",
+		  "description": "Acually taken in Indiana, but close enough.",
+		  "tags": "midwest corn-fields"
+	  },
+	  "headphones": {
+		  "caption": "Headphones (and baseball)",
+		  "tags": "macro indoors"
+	  }
+  }
+}
