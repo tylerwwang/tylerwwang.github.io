@@ -5,35 +5,35 @@
 
   "images": {
 	  "farmhouse": {
-		  "caption": "Little White Farmhouse",
-		  "description": "Wonder if it's still inhabitable.",
+		  "title": "Little White Farmhouse",
+		  "caption": "Wonder if it's still inhabitable.",
 		  "tags": "midwest corn-fields"
 	  },
 	  "gravel-and-corn-1": {
-		  "caption": "Gravel and Corn One",
+		  "title": "Gravel and Corn One",
 		  "tags": "midwest corn-fields"
 	  },
 	  "gravel-and-corn-2": {
-		  "caption": "Gravel and Corn Two",
+		  "title": "Gravel and Corn Two",
 		  "tags": "midwest corn-fields"
 	  },
 	  "corn": {
-		  "caption": "Corn",
-		  "description": "Flour corn grown in a garden",
+		  "title": "Corn",
+		  "caption": "Flour corn grown in a garden",
 		  "tags": "macro indoors"
 	  },
 	  "morecorn": {
-		  "caption": "More Corn",
-		  "description": "More flour corn grown in a garden",
+		  "title": "More Corn",
+		  "caption": "More flour corn grown in a garden",
 		  "tags": "macro indoors"
 	  },
 	  "sunset": {
-		  "caption": "Setting Sun",
-		  "description": "Acually taken in Indiana, but close enough.",
+		  "title": "Setting Sun",
+		  "caption": "Acually taken in Indiana, but close enough.",
 		  "tags": "midwest corn-fields"
 	  },
 	  "headphones": {
-		  "caption": "Headphones (and baseball)",
+		  "title": "Headphones (and baseball)",
 		  "tags": "macro indoors"
 	  }
   }
