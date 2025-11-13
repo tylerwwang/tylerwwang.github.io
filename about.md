@@ -29,7 +29,7 @@ But perhaps, it's also possible that beneath the rigor of mathematics exists som
 
 Accordingly, this site serves as a platform for sharing my work that best reflects my journey.
 
-[My Resume]({{site.baseurl}}/assets/Resume.pdf)
+[My CV]({{site.baseurl}}/assets/CV.pdf)
 
 # Why Drawings in Sand
 
