@@ -31,7 +31,7 @@ Accordingly, this site serves as a platform for sharing my work that best reflec
 
 [My CV]({{site.baseurl}}/assets/CV.pdf)
 
-# Why Drawings in Sand
+# The Site's Title
 
 Our life stories through time are like drawings in sand, 
 admired until we must go, where the tide, through the emptiness of the night,
